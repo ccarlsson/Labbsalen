@@ -1,0 +1,8 @@
+version: '3'
+services:
+  app:
+    image: 'docker.io/ccarlsson/labbsalen:latest'
+    restart: unless-stopped
+    ports:
+      - '1280:80'
+      - '12443:443'
