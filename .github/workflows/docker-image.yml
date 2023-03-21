@@ -15,4 +15,14 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag test:$(date +%s)
+      run: docker build . --file Dockerfile --tag ccarlsson/labbsalen:$(date +%s) --tag ccarlsson/labbsalen:latest
+    
+    - name: Login to Docker Hub
+      uses: docker/login-action@v1
+      with: 
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_PASSWORD }}
+    - name: Push Docker image with date
+      run: docker push ccarlsson/labbsalen:$(date +%s)
+    - name: Push Docker image latest
+      run: docker push ccarlsson/labbsalen:latest
