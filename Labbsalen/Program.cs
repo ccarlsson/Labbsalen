@@ -13,6 +13,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+// Yet another commit to trigger actions
 //app.UseHttpsRedirection();
 app.UseStaticFiles();
 
