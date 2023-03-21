@@ -13,6 +13,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+// Cloudflare handles https
 //app.UseHttpsRedirection();
 app.UseStaticFiles();
 
